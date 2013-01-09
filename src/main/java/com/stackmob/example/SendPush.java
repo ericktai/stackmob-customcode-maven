@@ -5,9 +5,9 @@
 package com.stackmob.example;
 
 
-//import com.google.gson.JsonElement;
-//import com.google.gson.JsonObject;
-//import com.google.gson.JsonParser;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.stackmob.core.MethodVerb;
 import com.stackmob.core.PushServiceException;
 import com.stackmob.core.ServiceNotActivatedException;
@@ -43,7 +43,7 @@ public class SendPush implements CustomCodeMethod {
 	public ResponseToProcess execute(ProcessedAPIRequest request, SDKServiceProvider serviceProvider) {
 		final String username = request.getLoggedInUser();
 
-/*
+
 		if (request.getVerb() != MethodVerb.POST) {
 			HashMap<String, String> errParams = new HashMap<String, String>();
 			errParams.put("error", "not a post sorry...");
@@ -105,10 +105,10 @@ public class SendPush implements CustomCodeMethod {
 			return new ResponseToProcess(HttpURLConnection.HTTP_INTERNAL_ERROR, errParams); // http 500 
 		}
 
-*/
+
 		final Map<String, Object> response = new HashMap<String, Object>();
-		//response.put("receiver", receiver);
-		response.put("receiver", username);
+		response.put("receiver", receiver);
+		response.put("user", username);
 		return new ResponseToProcess(HttpURLConnection.HTTP_OK, response);
 
 	}
