@@ -24,7 +24,7 @@ import scala.collection.JavaConverters._
 class EntryPointExtender extends JarEntryObject {
 
   override def methods(): JList[CustomCodeMethod] = {
-    val list: List[CustomCodeMethod] = (new HelloWorld) :: (new NoParam) :: Nil
+    val list: List[CustomCodeMethod] = (new HelloWorld) :: (new NoParam) :: (new CamelCase) :: Nil
     list.asJava
   }
 
