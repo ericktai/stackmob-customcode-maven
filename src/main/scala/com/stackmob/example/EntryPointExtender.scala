@@ -20,11 +20,12 @@ import com.stackmob.core.jar.JarEntryObject
 import com.stackmob.core.customcode.CustomCodeMethod
 import java.util.{List => JList}
 import scala.collection.JavaConverters._
+import com.stackmob.example.SendPush
 
 class EntryPointExtender extends JarEntryObject {
 
   override def methods(): JList[CustomCodeMethod] = {
-    val list: List[CustomCodeMethod] = (new HelloWorld) :: (new NoParam) :: (new CamelCase) :: Nil
+    val list: List[CustomCodeMethod] = (new HelloWorld) :: (new NoParam) :: (new CamelCase) :: (new SendPush) :: Nil
     list.asJava
   }
 
